@@ -1,16 +1,21 @@
 int stage;
 PFont title;
-
-
+float w, halfW;
+float playerX, playerY;
+float playerWidth, playerHeight;
+float ballX, ballY;
+float ballSpeedX, ballSpeedY;
 
 void setup()
 {
-  size(500, 500);
+  size(displayWidth, displayHeight);
   stage = 1;
-  player = new Player(); //Instance
+  playerWidth = 120;
+  playerHeight = playerWidth * 0.25f;
+  playerX = displayWidth / 2;
+  playerY = displayHeight - 60;
+  
 }
-
-Player player; //Instance of the class should have lower case
 
 
 void draw()
@@ -31,7 +36,6 @@ void draw()
   if(stage == 2)
   {
     //Game components
-    player.update();
-    player.render();
+    player1();
   }
 }

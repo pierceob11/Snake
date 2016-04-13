@@ -5,6 +5,9 @@ float playerX, playerY;
 float playerWidth, playerHeight;
 float ballX, ballY;
 float ballSpeedX, ballSpeedY;
+boolean ballStart;
+float ballSize;
+PImage background;
 
 void setup()
 {
@@ -14,9 +17,15 @@ void setup()
   playerHeight = playerWidth * 0.25f;
   playerX = displayWidth / 2;
   playerY = displayHeight - 60;
-  
+  ballX = displayWidth / 2;
+  ballY = displayHeight / 2;
+  ballSpeedX = 4;
+  ballSpeedY = 4;
+  ballStart = false;
+  ballSize = 20;
+  background = loadImage("pongbackground.jpg");
+    
 }
-
 
 void draw()
 {
@@ -37,5 +46,7 @@ void draw()
   {
     //Game components
     player1();
+    ball();
+    player2();
   }
 }

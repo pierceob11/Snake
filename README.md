@@ -1,2 +1,2 @@
 # Snake
-A repository for my recreation of snake in processing 
+A repository for my recreation of Pong in processing 

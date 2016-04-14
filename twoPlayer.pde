@@ -2,39 +2,39 @@ class Player2
 {
   //Field
   float playerX2, playerY2;
-  float playerWidth, playerHeight;
-  float playerSpeed;
+  float player2Width, player2Height;
+  float player2Speed;
   
   Player2()
   {
-    playerWidth = 120.0f;
-    playerHeight = playerWidth * 0.25f;
+    player2Width = 120.0f;
+    player2Height = playerWidth * 0.25f;
     playerX2 = displayWidth / 2;
     playerY2 = displayHeight - 730;
-    playerSpeed = 7.5f;
+    player2Speed = 7.5f;
   }
   
   void update() //What the instance of the class can do
   {
-    playerSpeed = 7.5f;
+    player2Speed = 7.5f;
     if(keyPressed)
     {
       if(key == 'a')
       {
-        playerX2 -= playerSpeed;
+        playerX2 -= player2Speed;
       }
       if(key == 'd')
       {
-        playerX2 += playerSpeed;
+        playerX2 += player2Speed;
       }
-      if(playerX2 - playerWidth / 2 < 0)
+      if(playerX2 - player2Width / 2 < 0)
       {
-        playerSpeed = 0;
-        playerX2 = playerWidth / 2;
+        player2Speed = 0;
+        playerX2 = player2Width / 2;
       }
-      if(playerX2 + playerWidth / 2 > displayWidth)
+      if(playerX2 + player2Width / 2 > displayWidth)
       {
-        playerSpeed = 0;
+        player2Speed = 0;
         playerX2 = displayWidth - 65;
       }
     }
@@ -43,7 +43,7 @@ class Player2
   void render() //Visualistion
   {
     rectMode(CENTER);
-    rect(playerX2, playerY2, playerWidth, playerHeight);
+    rect(playerX2, playerY2, player2Width, player2Height);
   }
   
   

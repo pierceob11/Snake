@@ -10,7 +10,7 @@ class Player2
     playerWidth = 120.0f;
     playerHeight = playerWidth * 0.25f;
     playerX2 = displayWidth / 2;
-    playerY2 = displayHeight - 650;
+    playerY2 = displayHeight - 730;
     playerSpeed = 7.5f;
   }
   
@@ -35,7 +35,7 @@ class Player2
       if(playerX2 + playerWidth / 2 > displayWidth)
       {
         playerSpeed = 0;
-        playerX2 = -playerWidth / 2;
+        playerX2 = displayWidth - 65;
       }
     }
   }

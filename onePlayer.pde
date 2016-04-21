@@ -4,14 +4,16 @@ class Player1
   float playerX1, playerY1;
   float player1Width, player1Height;
   float player1Speed;
+  int P1score;
   
   Player1()
   {
     player1Width = 120.0f;
-    player1Height = playerWidth * 0.25f;
+    player1Height = player1Width * 0.25f;
     playerX1 = displayWidth / 2;
     playerY1 = displayHeight - 50;
     player1Speed = 7.5f;
+    P1score = 0;
   }
   
   void update() //What the instance of the class can do
@@ -43,7 +45,11 @@ class Player1
   void render() //Visualistion
   {
     rectMode(CENTER);
-    rect(playerX1, playerY1, player1Width, player1Height);
+    fill(255);
+    rect(playerX1, playerY1 + 20, player1Width, player1Height); 
+    fill(0);
+    textSize(32);
+    text(P1score, playerX1, playerY1 + 30);
   }
   
   

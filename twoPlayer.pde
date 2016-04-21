@@ -4,14 +4,16 @@ class Player2
   float playerX2, playerY2;
   float player2Width, player2Height;
   float player2Speed;
+  int P2score;
   
   Player2()
   {
     player2Width = 120.0f;
-    player2Height = playerWidth * 0.25f;
+    player2Height = player2Width * 0.25f;
     playerX2 = displayWidth / 2;
     playerY2 = displayHeight - 730;
     player2Speed = 7.5f;
+    P2score = 0;
   }
   
   void update() //What the instance of the class can do
@@ -43,7 +45,10 @@ class Player2
   void render() //Visualistion
   {
     rectMode(CENTER);
+    fill(255);
     rect(playerX2, playerY2, player2Width, player2Height);
+    fill(0);
+    text(P2score, playerX2, playerY2 + 10);
   }
   
   

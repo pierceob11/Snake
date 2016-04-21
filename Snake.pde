@@ -1,7 +1,6 @@
 int stage;
 PFont title;
 float w, halfW;
-float playerWidth, playerHeight;
 PImage background;
 Player2 player2;
 Player1 player1;
@@ -13,7 +12,7 @@ void setup()
   stage = 1;
   player1 = new Player1();
   player2 = new Player2();
-  ball = new ball();
+  ball = new Ball();
   background = loadImage("pongbackground.jpg");
     
 }
@@ -36,7 +35,6 @@ void draw()
   if(stage == 2)
   {
     //Game components
-    ball();
     player1.update();
     player1.render();
     player2.update();
@@ -44,4 +42,4 @@ void draw()
     ball.update();
     ball.render();
   }
-}
+    }

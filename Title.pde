@@ -1,7 +1,7 @@
 void title()
 {
   title = loadFont("Algerian-48.vlw");
-  textFont(title, 60); 
+  textFont(title, 72); 
   textAlign(CENTER);
-  text("4PONG", displayWidth / 2, displayHeight / 2);
+  text("Acid Pong", displayWidth / 2, displayHeight / 2);
 }

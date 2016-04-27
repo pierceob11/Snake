@@ -5,6 +5,7 @@ PImage background;
 Player2 player2;
 Player1 player1;
 Ball ball;
+boolean keys[];
 
 void setup()
 {
@@ -13,14 +14,19 @@ void setup()
   player1 = new Player1();
   player2 = new Player2();
   ball = new Ball();
-  background = loadImage("pongbackground.jpg");
-    
+  background = loadImage("spaceimage.jpg");
+  keys = new boolean[5];
+  keys[0] = false; //left
+  keys[1] = false; //right
+  keys[2] = false;  //a
+  keys[3] = false;  //d
+  keys[4] = false;  //p
 }
 
 void draw()
 {
   background(0);
-  
+  image(background, 0, 0);
   //Main Menu
   if(stage == 1)
   {

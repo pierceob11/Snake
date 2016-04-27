@@ -1,4 +1,4 @@
-class Player1
+class Player1 
 {
   //Field
   float playerX1, playerY1;
@@ -19,13 +19,12 @@ class Player1
   void update() //What the instance of the class can do
   {
     player1Speed = 7.5f;
-    if(keyPressed)
-    {
-      if(keyCode == LEFT)
+    
+      if(keys[0])
       {
         playerX1 -= player1Speed;
       }
-      if(keyCode == RIGHT)
+      if(keys[1])
       {
         playerX1 += player1Speed;
       }
@@ -39,20 +38,21 @@ class Player1
         player1Speed = 0;
         playerX1 = displayWidth - 65;
       }
+      if(ball.ballY >= playerY1
+      && ball.ballX >= playerX1
+      && ball.ballX <= playerX1 + player1Width)
+      {
+        ball.ballSpeedY = -ball.ballSpeedY;
+      }
     }
-  }
   
   void render() //Visualistion
   {
-    rectMode(CENTER);
+    rectMode(CORNER);
     fill(255);
-    rect(playerX1, playerY1 + 20, player1Width, player1Height); 
+    rect(playerX1, playerY1, player1Width, player1Height); 
     fill(0);
     textSize(32);
     text(P1score, playerX1, playerY1 + 30);
-  }
-  
-  
-  
-  
+  } 
 }

@@ -19,13 +19,12 @@ class Player2
   void update() //What the instance of the class can do
   {
     player2Speed = 7.5f;
-    if(keyPressed)
-    {
-      if(key == 'a')
+    
+      if(keys[2])
       {
         playerX2 -= player2Speed;
       }
-      if(key == 'd')
+      if(keys[3])
       {
         playerX2 += player2Speed;
       }
@@ -40,14 +39,13 @@ class Player2
         playerX2 = displayWidth - 65;
       }
     }
-  }
   
   void render() //Visualistion
   {
-    rectMode(CENTER);
-    fill(255);
-    rect(playerX2, playerY2, player2Width, player2Height);
+    rectMode(CORNER);
     fill(0);
+    rect(playerX2, playerY2, player2Width, player2Height);
+    fill(255);
     text(P2score, playerX2, playerY2 + 10);
   }
   

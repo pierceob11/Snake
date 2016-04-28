@@ -20,23 +20,30 @@ class Player2
   {
     player2Speed = 7.5f;
     
-      if(keys[2])
+      if(keys[2]) //a
       {
         playerX2 -= player2Speed;
       }
-      if(keys[3])
+      if(keys[3]) //d
       {
         playerX2 += player2Speed;
       }
-      if(playerX2 - player2Width / 2 < 0)
+      //Screen barriers
+      if(playerX2 < 0)
       {
         player2Speed = 0;
-        playerX2 = player2Width / 2;
+        playerX2 = 5;
       }
-      if(playerX2 + player2Width / 2 > displayWidth)
+      if(playerX2 + player2Width > displayWidth)
       {
         player2Speed = 0;
-        playerX2 = displayWidth - 65;
+        playerX2 = displayWidth - (player2Width - 5);
+      }
+      if(ball.ballY >= playerY2
+      && ball.ballX >= playerX2
+      && ball.ballX <= playerX2 + player2Width)
+      {
+        ball.ballSpeedY = -ball.ballSpeedY;
       }
     }
   
@@ -44,9 +51,9 @@ class Player2
   {
     rectMode(CORNER);
     fill(0);
-    rect(playerX2, playerY2, player2Width, player2Height);
+    rect(playerX2, playerY2 - 20, player2Width, player2Height);
     fill(255);
-    text(P2score, playerX2, playerY2 + 10);
+    text(P2score, playerX2 + (player2Width / 2), playerY2 + 10);
   }
   
   

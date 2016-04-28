@@ -20,24 +20,26 @@ class Player1
   {
     player1Speed = 7.5f;
     
-      if(keys[0])
+      if(keys[0]) //Left
       {
         playerX1 -= player1Speed;
       }
-      if(keys[1])
+      if(keys[1]) //Right 
       {
         playerX1 += player1Speed;
       }
-      if(playerX1 - player1Width / 2 < 0)
+      //Screen barriers
+      if(playerX1 < 0)
       {
         player1Speed = 0;
-        playerX1 = player1Width / 2;
+        playerX1 = 5;
       }
-      if(playerX1 + player1Width / 2 > displayWidth)
+      if(playerX1 + player1Width > displayWidth)
       {
         player1Speed = 0;
-        playerX1 = displayWidth - 65;
+        playerX1 = displayWidth - (player1Width - 5);
       }
+      //Ball to player collision
       if(ball.ballY >= playerY1
       && ball.ballX >= playerX1
       && ball.ballX <= playerX1 + player1Width)
@@ -53,6 +55,6 @@ class Player1
     rect(playerX1, playerY1, player1Width, player1Height); 
     fill(0);
     textSize(32);
-    text(P1score, playerX1, playerY1 + 30);
+    text(P1score, playerX1 + (player1Width / 2), playerY1 + 27);
   } 
 }

@@ -41,14 +41,14 @@ if(ballY > displayHeight)
 {
   ballY = height / 2;
   ballX = width / 2;
-  player1.P1score ++;
+  player2.P2score ++;
   ballStart = false;
 }
 if(ballY < 0)
 {
   ballY = height / 2;
   ballX = width / 2;
-  player2.P2score ++;
+  player1.P1score ++;
   ballStart = false;
 }
   }

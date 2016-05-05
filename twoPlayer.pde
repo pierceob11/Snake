@@ -39,9 +39,9 @@ class Player2
         player2Speed = 0;
         playerX2 = displayWidth - (player2Width - 5);
       }
-      if(ball.ballY >= playerY2
+      if(ball.ballY <= playerY2 + player2Height
       && ball.ballX >= playerX2
-      && ball.ballX <= playerX2 + player2Width/2)
+      && ball.ballX <= playerX2 + player2Width)
       {
         ball.ballSpeedY = -ball.ballSpeedY;
       }
